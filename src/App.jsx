@@ -1,16 +1,19 @@
+import { useState } from 'react';
 import './App.css'
-import Menu from './components/Menu.jsx'
 
 function App() {
-  const saySomething = () => {
-    console.log("something");
+  //let number = 0;
+  const [number, setNumber] = useState(0);
+  
+  const addOne = () => {
+    //number ++;
+    setNumber(number + 1);
+    //console.log(number);
   }
-
+  
   return (
     <div>
-      <Menu></Menu>
-      <h1>Hola wuenas!!</h1>
-      <h2 onClick={saySomething}>WTF BRO</h2>
+      <button onClick={addOne}>Numero de clicks: {number}</button>
     </div>
   )
 }
