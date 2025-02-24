@@ -1,21 +1,22 @@
 import { useState } from 'react';
-import './App.css'
+import './App.css';
 
 function App() {
-  //let number = 0;
-  const [number, setNumber] = useState(0);
+  const [myText] = useState("Tu nombre");
+  const [myValue, setMyValue] = useState("Jhon Doe");
   
-  const addOne = () => {
-    //number ++;
-    setNumber(number + 1);
-    //console.log(number);
-  }
-  
+  const handleInput = (e) => {
+    console.log(e.target.value);
+    setMyValue(e.target.value);
+  };
+
   return (
     <div>
-      <button onClick={addOne}>Numero de clicks: {number}</button>
+      <h1>Hola buenas!</h1>
+      <h2>{myValue}</h2>
+      <input type="text" placeholder={myText} value={myValue} onChange={handleInput}/>
     </div>
-  )
+  );
 }
 
 export default App
