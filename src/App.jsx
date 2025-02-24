@@ -1,22 +1,20 @@
-import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [myText] = useState("Tu nombre");
-  const [myValue, setMyValue] = useState("Jhon Doe");
-  
-  const handleInput = (e) => {
-    console.log(e.target.value);
-    setMyValue(e.target.value);
-  };
+  const condition = false;
 
   return (
     <div>
-      <h1>Hola buenas!</h1>
-      <h2>{myValue}</h2>
-      <input type="text" placeholder={myText} value={myValue} onChange={handleInput}/>
+      <h1>Renderizado condicional</h1>
+      {/*condition && <h2>La condicion se cumple</h2>*/}
+
+      {condition ? (
+        <h2>La condicion se cumple</h2>
+      ) : (
+        <h2>La condicion no se cumple</h2>
+      )}
     </div>
-  );
+  )
 }
 
 export default App
